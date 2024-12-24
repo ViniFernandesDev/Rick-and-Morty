@@ -4,8 +4,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'StarWars';
-    src: url('assets/fonts/Starjedi.ttf') format('truetype');
+    font-family: 'getSchwifty';
+    src: url('assets/fonts/get_schwifty.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }

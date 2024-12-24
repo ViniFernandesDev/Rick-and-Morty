@@ -4,18 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        blackSpace: '#000000',
-        yellowJedi: '#FFE81F',
-        blueHolo: '#00BFFF',
-        redSith: '#FF3C3C',
-        grayText: '#B3B3B3',
-        grayImperial: '#333333',
-        grayMedium: '#666666',
-        grayLight: '#CCCCCC'
+        portalGreenLight: '#1EE48F',
+        portalGreen: '#19A974',
+        rickBlueLight: '#B7E4F9',
+        rickBlue: '#247BA0',
+        mortyYellow: '#F2D600',
+        spaceBlack: '#10141E'
       },
       fontFamily: {
         primary: ['Roboto', 'sans-serif'],
-        starWars: ['StarWars', 'sans-serif']
+        getSchwifty: ['getSchwifty', 'sans-serif']
       },
       fontSize: {
         lg: '1.5rem',
@@ -27,9 +25,12 @@ export default {
         stars: "url('assets/background_stars.jpg')"
       },
       boxShadow: {
-        jedi: '3px 3px 10px #c9b037'
+        portalGlow: '3px 3px 10px #19A974'
+      },
+      dropShadow: {
+        //prettier-ignore
+        'portalGlow': '0 0 15px #19A974'
       }
     }
-  },
-  plugins: []
+  }
 }
