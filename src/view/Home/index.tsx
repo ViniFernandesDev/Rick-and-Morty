@@ -1,9 +1,8 @@
 import { Card } from '../components/Card/Card'
 import { Input } from '../components/Input/Input'
-import { FavoriteShow } from '../components/FavoriteShow/FavoriteShow'
+import { Logo } from '../components/Logo/Logo'
 
 import { useHomeController } from './useHomeController'
-import { Logo } from '../components/Logo/Logo'
 
 export function Home() {
   const { filteredSearch, search, setSearch, loading, error } =
@@ -14,8 +13,6 @@ export function Home() {
 
   return (
     <div className="max-w-4xl m-auto">
-      <FavoriteShow />
-
       <div className="pt-8 pb-10 text-center w-full">
         <Logo />
       </div>

@@ -16,6 +16,7 @@ export const GET_CHARACTERS = gql`
 
 export function useHomeController() {
   const { data, loading, error } = useQuery<CharactersData>(GET_CHARACTERS)
+
   const [search, setSearch] = useState<string>('')
 
   const filteredSearch = data?.characters.results?.filter(character =>
