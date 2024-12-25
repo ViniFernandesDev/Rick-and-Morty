@@ -12,11 +12,11 @@ interface CardProps extends ComponentProps<'div'> {
 
 export function Card({ name, image, id }: CardProps) {
   const { favorites, addFavorite, removeFavorite } = useFavoritesStore()
-  const isFavorite = favorites.includes(id)
+  const isFavorite = favorites.some(favorite => favorite.id === id)
 
   return (
     <div
-      className="bg-white h-50 w-60 rounded-xl text-center flex items-center justify-center flex-col"
+      className="bg-rickBlueLight h-50 w-60 rounded-xl text-center flex items-center justify-center flex-col"
       id={id}
       data-testid="card-container"
     >
@@ -29,7 +29,9 @@ export function Card({ name, image, id }: CardProps) {
         <p className="text-sm font-bold my-2 text-spaceBlack">{name}</p>
 
         <button
-          onClick={() => (isFavorite ? removeFavorite(id) : addFavorite(id))}
+          onClick={() =>
+            isFavorite ? removeFavorite(id) : addFavorite({ id, name, image })
+          }
         >
           {isFavorite ? <Trash /> : <Star />}
         </button>
