@@ -11,18 +11,18 @@ export function FavoriteShow({ openModal }: FavoriteShowProps) {
   return (
     <button
       onClick={openModal}
-      className="absolute right-4 top-4 flex flex-col items-center gap-2 font-getSchwifty text-white "
+      className="group absolute right-4 top-4 flex flex-col items-center gap-2 font-getSchwifty text-white "
     >
       <div className="relative flex justify-center items-center">
         <img
           src={portal}
-          className="max-w-[500px] inline-block drop-shadow-portalGlow"
+          className="max-w-[500px] inline-block animate-portal"
         />
         <span className="absolute text-4xl text-spaceBlack pt-1">
           {favorites.length ?? ''}
         </span>
       </div>
-      <span className="text-2xl">Favoritos</span>
+      <span className="text-2xl group-hover:animate-shake-text">Favoritos</span>
     </button>
   )
 }

@@ -41,11 +41,27 @@ export default {
         overlayShow: {
           from: { opacity: 0 },
           to: { opacity: 1 }
+        },
+        portal: {
+          '0%': { filter: 'drop-shadow(0 0 5px #19A974)' },
+          '50%': { filter: 'drop-shadow(0 0 15px #19A974)' },
+          '100%': { filter: 'drop-shadow(0 0 5px #19A974)' }
+        },
+        shakeText: {
+          '0%': { transform: 'skewY(-10deg)' },
+          '5%': { transform: 'skewY(10deg)' },
+          '10%': { transform: 'skewY(-10deg)' },
+          '15%': { transform: 'skewY(10deg)' },
+          '20%': { transform: 'skewY(0deg)' },
+          '100%': { transform: 'skewY(0deg)' }
         }
       },
       animation: {
         'overlay-show': 'overlayShow 350ms cubic-bezier(0.16, 1, 0.3, 1)',
-        'content-show': 'contentShow 450ms cubic-bezier(0.16, 1, 0.3, 1)'
+        'content-show': 'contentShow 450ms cubic-bezier(0.16, 1, 0.3, 1)',
+        //prettier-ignore
+        'portal': 'portal infinite 1s ease-in-out',
+        'shake-text': 'shakeText infinite 1s ease'
       }
     }
   }
