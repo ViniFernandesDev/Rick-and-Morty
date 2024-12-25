@@ -1,11 +1,18 @@
 import portal from '../../../assets/portal.png'
 import { useFavoritesStore } from '../../../store/useFavoritesStore'
 
-export function FavoriteShow() {
+interface FavoriteShowProps {
+  openModal: () => void
+}
+
+export function FavoriteShow({ openModal }: FavoriteShowProps) {
   const { favorites } = useFavoritesStore()
 
   return (
-    <div className="absolute right-4 top-4 flex flex-col items-center gap-2 font-getSchwifty text-white ">
+    <button
+      onClick={openModal}
+      className="absolute right-4 top-4 flex flex-col items-center gap-2 font-getSchwifty text-white "
+    >
       <div className="relative flex justify-center items-center">
         <img
           src={portal}
@@ -16,6 +23,6 @@ export function FavoriteShow() {
         </span>
       </div>
       <span className="text-2xl">Favoritos</span>
-    </div>
+    </button>
   )
 }
