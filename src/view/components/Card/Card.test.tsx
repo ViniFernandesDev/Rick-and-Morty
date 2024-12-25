@@ -18,4 +18,10 @@ describe('Card', () => {
     const displayName = screen.getByText(name)
     expect(displayName).toBeInTheDocument()
   })
+
+  it('should render the button to toggle favorite', () => {
+    render(<Card id="1" name="Rick" image="/path/to/rick.png" />)
+    const button = screen.getByRole('button')
+    expect(button).toBeInTheDocument()
+  })
 })
