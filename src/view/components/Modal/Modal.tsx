@@ -19,18 +19,16 @@ export function Modal({
   if (!open) return null
 
   return (
-    <div>
+    <div className="fixed flex justify-center items-center h-full w-full z-10">
       <div
         className={cn(
-          'fixed inset-0 bg-black/60 backdrop-blur-sm z-50',
-          'data-[state=open]:animate-content-show'
+          'fixed inset-0 bg-black/60 backdrop-blur-sm z-50 animate-overlay-show'
         )}
       />
 
       <div
         className={cn(
-          'fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 space-y-2 bg-white rounded-2xl z-[51] shadow-[0px_11px_20px_0px_rgba(0,0,0,0.10)] w-full max-w-[1100px] outline-none',
-          'data-[state=open]:animate-content-show'
+          'z-[100] animate-content-show absolute p-8 space-y-2 bg-white rounded-2xl  shadow-[0px_11px_20px_0px_rgba(0,0,0,0.10)] w-full max-w-[1100px] outline-none'
         )}
       >
         <button
