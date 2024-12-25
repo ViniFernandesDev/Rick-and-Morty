@@ -1,10 +1,5 @@
 import { create } from 'zustand'
-
-interface Character {
-  id: string
-  name: string
-  image: string
-}
+import { Character } from '../app/utils/types'
 
 interface FavoriteState {
   favorites: Character[]
