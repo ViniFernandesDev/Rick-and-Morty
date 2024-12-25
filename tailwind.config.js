@@ -58,6 +58,10 @@ export default {
         logo: {
           from: { opacity: 0, transform: 'scale(0) ' },
           to: { opacity: 1, transform: 'scale(1)' }
+        },
+        slide: {
+          from: { backgroundPosition: '0 0' },
+          to: { backgroundPosition: '0 500%' }
         }
       },
       animation: {
@@ -67,7 +71,9 @@ export default {
         'portal': 'portal infinite 1s ease-in-out',
         'shake-text': 'shakeText infinite 1s ease',
         //prettier-ignore
-        'logo': 'logo 2s cubic-bezier(0.16, 1, 0.3, 1)'
+        'logo': 'logo 2s cubic-bezier(0.16, 1, 0.3, 1)',
+        //prettier-ignore
+        'slide': 'slide 60s linear infinite'
       }
     }
   }
