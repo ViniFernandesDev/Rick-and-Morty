@@ -8,7 +8,7 @@ export function Initial() {
 
   return (
     <div className="flex items-center justify-center h-full">
-      <div className="text-mortyYellow flex items-center justify-center flex-col">
+      <div className="text-mortyYellow flex items-center justify-center flex-col  animate-logo">
         <div className="flex flex-col items-center text-center gap-6">
           <Logo />
 

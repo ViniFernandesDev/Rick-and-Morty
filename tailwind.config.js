@@ -54,6 +54,10 @@ export default {
           '15%': { transform: 'skewY(10deg)' },
           '20%': { transform: 'skewY(0deg)' },
           '100%': { transform: 'skewY(0deg)' }
+        },
+        logo: {
+          from: { opacity: 0, transform: 'scale(0) ' },
+          to: { opacity: 1, transform: 'scale(1)' }
         }
       },
       animation: {
@@ -61,7 +65,9 @@ export default {
         'content-show': 'contentShow 450ms cubic-bezier(0.16, 1, 0.3, 1)',
         //prettier-ignore
         'portal': 'portal infinite 1s ease-in-out',
-        'shake-text': 'shakeText infinite 1s ease'
+        'shake-text': 'shakeText infinite 1s ease',
+        //prettier-ignore
+        'logo': 'logo 2s cubic-bezier(0.16, 1, 0.3, 1)'
       }
     }
   }
