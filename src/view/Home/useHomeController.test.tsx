@@ -60,13 +60,13 @@ const mocksWithData = [
 ]
 
 function TestComponent() {
-  const { filteredSearch, loading, error } = useHomeController()
+  const { listCharacters, loading, error } = useHomeController()
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error</p>
-  return filteredSearch?.length === 0 ? (
+  return listCharacters?.length === 0 ? (
     <p>Nenhum item encontrado</p>
   ) : (
-    <div>{filteredSearch?.map(char => <p key={char.id}>{char.name}</p>)}</div>
+    <div>{listCharacters?.map(char => <p key={char.id}>{char.name}</p>)}</div>
   )
 }
 
