@@ -1,8 +1,8 @@
-import logo from '../../assets/logo.png'
-
 import { Card } from '../components/Card/Card'
 import { Input } from '../components/Input/Input'
+
 import { useHomeController } from './useHomeController'
+import { Logo } from '../components/Logo/Logo'
 
 export function Home() {
   const { filteredSearch, search, setSearch, loading, error } =
@@ -14,10 +14,7 @@ export function Home() {
   return (
     <div className="max-w-4xl m-auto">
       <div className="pt-8 pb-10 text-center w-full">
-        <img
-          src={logo}
-          className="max-w-[500px] inline-block drop-shadow-portalGlow"
-        />
+        <Logo />
       </div>
 
       <div className="mb-16 mx-auto w-[600px]">
@@ -35,6 +32,8 @@ export function Home() {
       </div>
 
       <section className="flex items-center justify-center flex-wrap gap-5 ">
+        {filteredSearch?.length === 0 && <h1 className="text-white">nada</h1>}
+
         {filteredSearch?.map(character => (
           <Card
             id={character.id}
