@@ -12,7 +12,7 @@ Este projeto é uma aplicação React com TypeScript que utiliza a API GraphQL d
 ### Configurações Iniciais
 **Clone o projeto:**
 `
-git clone <url-do-repositório>
+git clone git@github.com:ViniFernandesDev/Rick-and-Morty.git
 `
 ## Instale as dependências:
 `yarn`
