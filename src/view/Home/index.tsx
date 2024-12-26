@@ -1,7 +1,8 @@
 import { Card } from '../components/Card/Card'
-import { Input } from '../components/Input/Input'
 import { Logo } from '../components/Logo/Logo'
 import { Button } from '../components/Button/Button'
+import { Search } from './components/Search'
+import { CircleNotch } from '../../assets/CircleNotch'
 
 import { useHomeController } from './useHomeController'
 
@@ -18,8 +19,8 @@ export function Home() {
     handlePrevious
   } = useHomeController()
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error.message}</p>
+  const isShowPagination = !loading && !error && listCharacters.length !== 0
+  const isNotFoundCharacters = !loading && listCharacters?.length === 0
 
   return (
     <div className="max-w-4xl m-auto">
@@ -27,52 +28,58 @@ export function Home() {
         <Logo />
       </div>
 
-      <div className="mb-16 mx-auto w-[600px]">
-        <p className="text-white font-getSchwifty text-3xl text-center mb-4">
-          Encontre seus personagens favoritos
-        </p>
+      <Search search={search} setSearch={setSearch} />
 
-        <Input
-          name="search"
-          placeholder="Ex. Morty"
-          type="text"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-      </div>
-
-      <section className="flex flex-col justify-between min-h-[700px]">
-        <div className="flex justify-center flex-wrap gap-5">
-          {listCharacters?.length === 0 && (
-            <h1 className="text-white">Nenhum personagem encontrado</h1>
+      <section className="flex flex-col justify-between min-h-[700px] pb-4">
+        <div className="flex flex-col">
+          {loading && (
+            <div className="text-center">
+              <CircleNotch className="animate-spin inline-block" />
+            </div>
           )}
 
-          {listCharacters?.map(character => (
-            <Card
-              id={character.id}
-              name={character.name}
-              image={character.image}
-            />
-          ))}
+          {error && (
+            <p className="text-red-400 font-getSchwifty text-3xl text-center mb-4">
+              {error?.message ?? 'Erro desconhecido, atualize a página'}
+            </p>
+          )}
+
+          {isNotFoundCharacters && (
+            <p className="text-portalGreenLight animate-portal font-getSchwifty text-2xl text-center mb-4">
+              {error?.message ?? 'Nenhum personagem encontrado'}
+            </p>
+          )}
+
+          <div className="flex justify-center flex-wrap gap-5">
+            {listCharacters?.map(character => (
+              <Card
+                id={character.id}
+                name={character.name}
+                image={character.image}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="text-white w-full flex items-center justify-center gap-3 mt-12">
-          <Button
-            className="bg-portalGreenLight"
-            onClick={handlePrevious}
-            disabled={currentPage === 0}
-          >
-            Anterior
-          </Button>
+        {isShowPagination && (
+          <div className="text-white w-full flex items-center justify-center gap-3 mt-12">
+            <Button
+              className="bg-portalGreenLight"
+              onClick={handlePrevious}
+              disabled={currentPage === 0}
+            >
+              Anterior
+            </Button>
 
-          <Button
-            className="bg-portalGreenLight"
-            onClick={handleNext}
-            disabled={currentPage === totalPaginationPages - 1}
-          >
-            Próximo
-          </Button>
-        </div>
+            <Button
+              className="bg-portalGreenLight"
+              onClick={handleNext}
+              disabled={currentPage === totalPaginationPages - 1}
+            >
+              Próximo
+            </Button>
+          </div>
+        )}
       </section>
     </div>
   )
