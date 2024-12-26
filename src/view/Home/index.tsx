@@ -24,11 +24,13 @@ export function Home() {
 
   return (
     <div className="max-w-4xl m-auto">
-      <div className="pt-8 pb-10 text-center w-full">
-        <Logo />
+      <div className="fixed bg-spaceBlack sm:bg-transparent sm:relative pb-6 sm:pt-8 sm:pb-10 mb-8 sm:mb-0 text-left sm:text-center w-full pr-[100px] sm:pr-0">
+        <Logo className="w-[340px] sm:w-full" />
       </div>
 
-      <Search search={search} setSearch={setSearch} />
+      <div className="mt-[130px] sm:mt-0">
+        <Search search={search} setSearch={setSearch} />
+      </div>
 
       <section className="flex flex-col justify-between min-h-[700px] pb-4">
         <div className="flex flex-col">

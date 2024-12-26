@@ -16,7 +16,7 @@ export function Card({ name, image, id }: CardProps) {
 
   return (
     <div
-      className="bg-portalGreen h-50 w-60 rounded-xl text-center flex items-center justify-center flex-col"
+      className={` border h-50 w-60 rounded-xl text-center flex items-center justify-center flex-col ${isFavorite ? 'bg-rickBlueLight' : 'bg-gray-50'} `}
       id={id}
       data-testid="card-container"
     >

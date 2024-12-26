@@ -11,7 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputId = id ?? name
 
     return (
-      <div className="relative flex item-center flex-col">
+      <div className="flex item-center flex-col">
         <input
           ref={ref}
           id={inputId}

@@ -19,6 +19,8 @@ export function Internals() {
 
   return (
     <div className="flex w-full h-full">
+      <Outlet />
+
       <FavoriteShow
         openModal={handleOpenFiltersModal}
         isDisabled={favorites.length === 0}
@@ -44,17 +46,18 @@ export function Internals() {
               </Button>
             </div>
           )}
-          {favorites?.map(character => (
-            <Card
-              id={character.id}
-              name={character.name}
-              image={character.image}
-            />
-          ))}
+
+          <div className="w-full flex items-start flex-wrap gap-4 justify-center h-[650px] overflow-y-scroll">
+            {favorites?.map(character => (
+              <Card
+                id={character.id}
+                name={character.name}
+                image={character.image}
+              />
+            ))}
+          </div>
         </section>
       </Modal>
-
-      <Outlet />
     </div>
   )
 }
