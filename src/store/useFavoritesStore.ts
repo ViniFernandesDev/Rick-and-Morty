@@ -5,6 +5,7 @@ interface FavoriteState {
   favorites: Character[]
   addFavorite: (character: Character) => void
   removeFavorite: (id: string) => void
+  removeAllFavorites: () => void
 }
 
 export const useFavoritesStore = create<FavoriteState>(set => ({
@@ -16,5 +17,6 @@ export const useFavoritesStore = create<FavoriteState>(set => ({
   removeFavorite: id =>
     set(state => ({
       favorites: state.favorites.filter(favorite => favorite.id !== id)
-    }))
+    })),
+  removeAllFavorites: () => set(() => ({ favorites: [] }))
 }))
