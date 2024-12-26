@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 import { useFavoritesStore } from '../../../store/useFavoritesStore'
 
 import { Star } from '../../../assets/Star'
-import { Trash } from '../../../assets/Trash'
+import { Close } from '../../../assets/Close'
 
 interface CardProps extends ComponentProps<'div'> {
   name: string
@@ -16,7 +16,7 @@ export function Card({ name, image, id }: CardProps) {
 
   return (
     <div
-      className="bg-rickBlueLight h-50 w-60 rounded-xl text-center flex items-center justify-center flex-col"
+      className="bg-portalGreen h-50 w-60 rounded-xl text-center flex items-center justify-center flex-col"
       id={id}
       data-testid="card-container"
     >
@@ -29,11 +29,12 @@ export function Card({ name, image, id }: CardProps) {
         <p className="text-sm font-bold my-2 text-spaceBlack">{name}</p>
 
         <button
+          className={`drop-shadow-2xl hover:grayscale-0 transition-all ${isFavorite ? 'grayscale-0' : 'grayscale'} `}
           onClick={() =>
             isFavorite ? removeFavorite(id) : addFavorite({ id, name, image })
           }
         >
-          {isFavorite ? <Trash /> : <Star />}
+          {isFavorite ? <Close /> : <Star />}
         </button>
       </div>
     </div>
