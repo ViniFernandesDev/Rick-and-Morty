@@ -19,7 +19,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           placeholder={placeholder}
           {...props}
           className={cn(
-            'bg-transparent font-getSchwifty tracking-[2px] rounded-lg border border-gray-500 px-3 h-[52px] text-portalGreenLight  focus:border-gray-800 transition-all outline-none',
+            'bg-transparent font-getSchwifty tracking-[2px] rounded-lg border border-gray-500 px-3 h-[52px] text-portalGreenLight  focus:border-portalGreenLight transition-all outline-none',
             className
           )}
         />

@@ -1,4 +1,4 @@
-export const Trash = () => {
+export function Trash() {
   return (
     <div className="hover:">
       <svg

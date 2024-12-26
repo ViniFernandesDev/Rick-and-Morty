@@ -1,4 +1,4 @@
-export const Star = () => {
+export function Star() {
   return (
     <div className="hover:">
       <svg
