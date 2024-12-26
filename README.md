@@ -32,11 +32,11 @@ git clone git@github.com:ViniFernandesDev/Rick-and-Morty.git
 ## Estrutura dos arquivos
 
 - src: Este é o diretório principal que contém o código fonte do projeto.
-- app: Pode incluir componentes principais e configurações do nível mais alto do aplicativo, como os contextos (useFavoriteStore.ts) e testes relacionados (useFavorite.test.ts).
-- assets: Normalmente contém recursos estáticos como imagens (background_stars.jpg, logo.png, etc.) e fontes.
+- app: Pode incluir componentes principais e configurações do nível mais alto do aplicativo, como os contextos (useFavoriteStore.ts)
+- assets: Contém recursos estáticos como imagens (background_stars.jpg, logo.png, etc.) e fontes.
 - router: Configuram as rotas do React Router, que determinam qual componente é renderizado com base na URL acessada pelo usuário
 - components: Contém os componentes React utilizados no projeto. Subdiretórios como view e internal podem organizar componentes por tipo ou funcionalidade.
-- store: Geralmente contém arquivos relacionados ao gerenciamento de estado, como pode ser sugerido pelo arquivo useFavoriteStore.ts.
+- store: Contém arquivos relacionados ao gerenciamento de estado.
 - utils: Diretório para funções utilitárias que podem ser usadas em várias partes do projeto.
 - view: Contém componentes relacionados às visualizações específicas da aplicação, como páginas ou layouts mais complexos.
 - public: Diretório para arquivos que devem ser acessíveis publicamente na web, como o index.html.
