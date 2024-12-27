@@ -50,6 +50,7 @@ export function Internals() {
           <div className="w-full flex items-start flex-wrap gap-4 justify-center h-[650px] overflow-y-scroll">
             {favorites?.map(character => (
               <Card
+                key={character.id}
                 id={character.id}
                 name={character.name}
                 image={character.image}

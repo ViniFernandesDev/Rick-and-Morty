@@ -55,6 +55,7 @@ export function Home() {
           <div className="flex justify-center flex-wrap gap-5">
             {listCharacters?.map(character => (
               <Card
+                key={character.id}
                 id={character.id}
                 name={character.name}
                 image={character.image}
